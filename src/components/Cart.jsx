@@ -5,10 +5,13 @@ function Cart(){
     const {cartItems, setCartItems} = useContext(ShopContext);
 
     return(
-        cartItems.map((item, index) => (<div key={index}>
+        <div className="w-64 bg-white shadow p-4">
+            {cartItems.map((item, index) => (<div key={index}>
                 <p>{item.data.title}</p>
                 <p>{item.count}</p>
-            </div>))
+            </div>))}
+        </div>
+        
     );
 }
 

@@ -26,7 +26,6 @@ function ProductCard({data}){
                     <input className="flex-1 w-full text-center" value={count} readOnly></input>
                     <button className="px-5 shrink-0" onClick={() => setCount(count + 1)}>+</button>
                 </div>
-                
                 <button onClick={buttonClickHandler}>Add to Cart</button>
             </div>
         </>

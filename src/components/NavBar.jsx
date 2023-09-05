@@ -10,19 +10,20 @@ function NavBar(){
 
     return(
         <>
-            <div className="flex p-2 bg-slate-500 gap-2">
-                <h1>Shopping Cart</h1>
-                <ul className="flex gap-2">
-                <li><button onClick={() => navigate("/")}>Home</button></li>
-                <li><button onClick={() => navigate("/shop")}>Shop</button></li>
-                <li><button onClick={() => setCartClicked(!cartClicked)}>Cart</button></li>
-                <p>{cartItems ? cartItems.length : null}</p>
-                </ul>
+            <div className="fixed w-full">
+                <div className="flex p-2 bg-slate-500 gap-2">
+                    <h1>Shopping Cart</h1>
+                    <ul className="flex gap-2">
+                    <li><button onClick={() => navigate("/")}>Home</button></li>
+                    <li><button onClick={() => navigate("/shop")}>Shop</button></li>
+                    <li><button onClick={() => setCartClicked(!cartClicked)}>Cart</button></li>
+                    <p>{cartItems ? cartItems.length : null}</p>
+                    </ul>
+                </div>
+                {cartClicked ? <Cart/> : null}
             </div>
-
-            {cartClicked ? <Cart/> : null}
+            <div className="pt-16"></div>
         </>
-        
     )
 }
 
