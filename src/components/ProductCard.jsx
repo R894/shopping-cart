@@ -6,8 +6,17 @@ function ProductCard({data}){
     const [count, setCount] = useState(0);
     
     const buttonClickHandler = () => {
-        if(count >= 1){
-            setCartItems((prev) => [...prev, {data: data, count: count}]);
+        //Search for data id in cart items
+        const itemIndex = cartItems.findIndex((item) => item.id === data.id);
+        
+        if (itemIndex !== -1) { 
+            //if it exists then update the item
+            const updatedCartItems = [...cartItems];
+            updatedCartItems[itemIndex].count += count;
+            setCartItems(updatedCartItems);
+        } else if (count >= 1) { 
+            //otherwise add it
+            setCartItems((prev) => [...prev, { ...data, count }]);
         }
     }
 
